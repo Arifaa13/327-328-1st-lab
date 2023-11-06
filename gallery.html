@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    div.gallery {
+      border: 1px solid #ccc;
+    }
+
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(9, 5vw);
+      padding-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(36, 5vw);
+
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(132, 5vw);
+
+      }
+    }
+
+    div.desc {
+      padding: 5px;
+      text-align: center;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .gallery__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery__item {
+      margin-inline-start: 20px;
+      margin-inline-end: 20px;
+    }
+
+    .gallery__item--1 {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 3;
+    }
+
+    .gallery__item--2 {
+      grid-column: 3 / span 2;
+      grid-row: 1 / span 3;
+    }
+
+    .gallery__item--3 {
+      grid-column: 5 / span 2;
+      grid-row: 1 / span 3;
+    }
+
+    .gallery__item--4 {
+      grid-column: 7 / span 2;
+      grid-row: 1 / span 3;
+    }
+
+    .gallery__item--5 {
+      grid-column: 1 / span 2;
+      grid-row: 4 / span 3;
+    }
+
+    .gallery__item--6 {
+      grid-column: 3 / span 2;
+      grid-row: 4 / span 3;
+    }
+
+    .gallery__item--7 {
+      grid-column: 5 / span 2;
+      grid-row: 4 / span 3;
+    }
+
+    .gallery__item--8 {
+      grid-column: 7 / span 2;
+      grid-row: 4 / span 3;
+    }
+
+    .gallery__item--9 {
+      grid-column: 1 / span 2;
+      grid-row: 7 / span 3;
+    }
+
+    .gallery__item--10 {
+      grid-column: 3 / span 2;
+      grid-row: 7 / span 3;
+    }
+
+    .gallery__item--11 {
+      grid-column: 5 / span 2;
+      grid-row: 7 / span 3;
+    }
+
+    .gallery__item--12 {
+      grid-column: 7 / span 2;
+      grid-row: 7 / span 3;
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--1 {
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--2 {
+        grid-column: 5 / span 4;
+        grid-row: 1 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--3 {
+        grid-column: 1 / span 4;
+        grid-row: 7 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--4 {
+        grid-column: 5 / span 4;
+        grid-row: 7 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--5 {
+        grid-column: 1 / span 4;
+        grid-row: 13 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--6 {
+        grid-column: 5 / span 4;
+        grid-row: 13 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--7 {
+        grid-column: 1 / span 4;
+        grid-row: 19 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--8 {
+        grid-column: 5 / span 4;
+        grid-row: 19 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--9 {
+        grid-column: 1 / span 4;
+        grid-row: 25 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--10 {
+        grid-column: 5 / span 4;
+        grid-row: 25 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--11 {
+        grid-column: 1 / span 4;
+        grid-row: 31 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .gallery__item--12 {
+        grid-column: 5 / span 4;
+        grid-row: 31 / span 6;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--1 {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--2 {
+        grid-column: 1 / span 1;
+        grid-row: 13 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--3 {
+        grid-column: 1 / span 1;
+        grid-row: 25 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--4 {
+        grid-column: 1 / span 1;
+        grid-row: 37 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--5 {
+        grid-column: 1 / span 1;
+        grid-row: 49 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--6 {
+        grid-column: 1 / span 1;
+        grid-row: 61 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--7 {
+        grid-column: 1 / span 1;
+        grid-row: 73 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--8 {
+        grid-column: 1 / span 1;
+        grid-row: 85 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--9 {
+        grid-column: 1 / span 1;
+        grid-row: 97 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--10 {
+        grid-column: 1 / span 1;
+        grid-row: 109 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--11 {
+        grid-column: 1 / span 1;
+        grid-row: 121 / span 12;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .gallery__item--12 {
+        grid-column: 1 / span 1;
+        grid-row: 133 / span 12;
+      }
+    }
+
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    .navbar {
+      overflow: hidden;
+      background-color: #0C090A;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    .navbar a.right {
+      float: right;
+    }
+
+    .navbar a:hover {
+      background-color: #64E986;
+      color: black;
+    }
+
+
+    /* Here goes Footer */
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #040720;
+    }
+
+    .footer h2 {
+      color: white;
+    }
+
+    @media screen and (max-width: 1300px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .navbar a {
+        float: none;
+        width: 100%;
+      }
+    }
+
+    .fa {
+      padding: 30px;
+      font-size: 40px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      margin: 6px 3px;
+      border-radius: 60%;
+    }
+
+    .fa:hover {
+      opacity: 0.8;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    .fa-google {
+      background: #dd4b39;
+      color: white;
+    }
+
+    .fa-youtube {
+      background: #bb0000;
+      color: white;
+    }
+
+    .fa-android {
+      background: #a4c639;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">My Personal Page</a>
+    <a href="#">Projects</a>
+    <a href="#">Gallery</a>
+    <a href="#" class="right">Contact</a>
+  </div>
+
+
+  <h1>Image Gallery | Be Your own kind of Beautiful. </h1>
+  <div class="gallery">
+    <figure class="gallery__item gallery__item--1">
+      <a target="_blank" href="highway.jpg">
+        <img src="highway.jpg" alt="HighWay" class="gallery__img">
+      </a>
+      <div class="desc">Accept yourself,</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--2">
+      <a target="_blank" href="mountains.jpg">
+        <img src="mountains.jpg" alt="Mountains" class="gallery__img">
+      </a>
+      <div class="desc">Love yourself,</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--3">
+      <a target="_blank" href="waterfall.jpg">
+        <img src="waterfall.jpg" alt="WaterFall" class="gallery__img">
+      </a>
+      <div class="desc">And keep moving forward...</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--4">
+      <a target="_blank" href="sunrise.jpg">
+        <img src="sunrise.jpg" alt="SunRise" class="gallery__img">
+      </a>
+      <div class="desc">It is never too late</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--5">
+      <a target="_blank" href="sunset.jpg">
+        <img src="sunset.jpg" alt="SunSet" class="gallery__img">
+      </a>
+      <div class="desc">to be what you might have been...</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--6">
+      <a target="_blank" href="morning.jpg">
+        <img src="morning.jpg" alt="Morning" class="gallery__img">
+      </a>
+      <div class="desc">Opportunities don't happen,</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--7">
+      <a target="_blank" href="boat.jpg">
+        <img src="boat.jpg" alt="Boat" class="gallery__img">
+      </a>
+      <div class="desc">you create them...</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--8">
+      <a target="_blank" href="girl.jpg">
+        <img src="girl.jpg" alt="Girl" class="gallery__img">
+      </a>
+      <div class="desc">Just one small positive thought</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--9">
+      <a target="_blank" href="village.jpg">
+        <img src="village.jpg" alt="Village" class="gallery__img">
+      </a>
+      <div class="desc">in the morning</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--10">
+      <a target="_blank" href="park.jpg">
+        <img src="park.jpg" alt="Park" class="gallery__img">
+      </a>
+      <div class="desc">can change your whole day...</div>
+    </figure>
+
+    <figure class="gallery__item gallery__item--11">
+      <a target="_blank" href="ocean.jpg">
+        <img src="ocean.jpg" alt="Ocean" class="gallery__img">
+      </a>
+      <div class="desc">Love the nature, </div>
+    </figure>
+    <figure class="gallery__item gallery__item--12">
+      <a target="_blank" href="boy.jpg">
+        <img src="boy.jpg" alt="Boy" class="gallery__img">
+      </a>
+      <div class="desc">live your passion...</div>
+    </figure>
+  </div>
+
+
+
+  <div class="clearfix"></div>
+
+  <div style="padding:6px;">
+    <p>Photographs play an important role in everyone's life – they connect us to our past, they remind us of people, 
+	places, feelings, and stories. They can help us to know who we are. 
+	So many of the moments that have changed the world forever are documented in photographs.
+	Photography has the power to inspire many people and could lead to a change for the better.</p>
+  </div>
+
+
+  <div class="footer">
+    <h2> © copyright //write your full name and something related if necessary// </h2>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-android"></a>
+  </div>
+
+</body>
+
+</html>

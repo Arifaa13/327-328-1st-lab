@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cursive, Monospace, Fantasy;
+  margin: 0;
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.container {
+  display: grid;
+  place-items: center;  
+  text-align: center;
+} 
+
+/* Navigation bar */
+
+.navbar {
+  overflow: hidden;
+  background-color: #FF4500;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover {
+  background-color: #DAEE01;
+  color: black;
+}
+
+
+/* Here goes Footer */
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #98FF98;
+}
+
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.fa {
+  padding: 30px;
+  font-size: 40px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 6px 3px;
+  border-radius: 60%;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+
+</style>
+</head>
+
+<body>
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="#">My Personal Page</a>
+  <a href="#">Projects</a>
+  <a href="#">Gallery</a>
+  <a href="#" class="right">Contact</a>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3 class="animate-charcter">PROJECTS</h3>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>   © copyright //write your full name and something related if necessary// </h2>
+  <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-google"></a>
+  <a href="#" class="fa fa-youtube"></a>
+  <a href="#" class="fa fa-android"></a>
+</div>
+
+</body>
+</html>
